@@ -5,6 +5,7 @@
 		"esModuleInterop": true,
 		"experimentalDecorators": true,
 		"jsx": "react",
+		"module": "ESNext",
 		"moduleResolution": "Node",
 		"paths": {
 			"~*": ["./*"]
