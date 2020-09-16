@@ -1,4 +1,3 @@
-import { CircularProgress } from '@material-ui/core'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { observer } from 'mobx-react'
 import React from 'react'
@@ -10,7 +9,7 @@ import '~inject/container'
 import { IRouter } from '~inject/router'
 
 const HomeRoot = React.lazy(() => import('~home/Root'))
-const SignInRoot = React.lazy(() => import('~sign_in/Root'))
+const SignInRoot = React.lazy(() => import('~sign_in/components/Root'))
 
 const App = observer(() => {
 	const app = container.resolve<IApp>('app')
@@ -19,7 +18,7 @@ const App = observer(() => {
 	React.useEffect(() => app.init(), [app])
 
 	return (
-		<React.Suspense fallback={<CircularProgress />}>
+		<React.Suspense fallback={null}>
 			{router.$routes.get('sign_in') && <SignInRoot />}
 			{router.$routes.get('home') && <HomeRoot />}
 		</React.Suspense>
